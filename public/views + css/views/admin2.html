@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="../css/admin_style.css">
+</head>
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Quản trị</span> </a>
+                <div class="nav_list"> 
+                    <a href="#" class="nav_link active"> 
+                        <i class='bx bx-grid-alt nav_icon'></i> 
+                        <span class="nav_name">Dashboard</span> 
+                    </a> 
+                    <a href="#hlv" class="nav_link"> 
+                        <i class='bx bx-user nav_icon'></i> 
+                        <span class="nav_name">HLV</span> 
+                    </a> 
+                    <a href="#baitap" class="nav_link"> 
+                        <i class='bx bx-message-square-detail nav_icon'></i> 
+                        <span class="nav_name">Bài tập</span> 
+                    </a> 
+                    <!-- <a href="#" class="nav_link"> 
+                        <i class='bx bx-bookmark nav_icon'></i> 
+                        <span class="nav_name">Bookmark</span> </a> 
+                        <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> 
+                            <span class="nav_name">Files</span> </a> <a href="#" class="nav_link"> 
+                                <i class='bx bx-bar-chart-alt-2 nav_icon'></i> 
+                                <span class="nav_name">Stats</span> </a> </div> -->
+            </div> 
+            <a href="/login" class="nav_link"> 
+                <i class='bx bx-log-out nav_icon'></i> 
+                <span class="nav_name">Đăng xuất</span> 
+            </a>
+        </nav>
+    </div>
+    <!--Container Main start-->
+    <div id="dashboard" class="height-100 bg-light">
+        <div class="db_container">
+            <h1>Dashboard</h1>
+            <span>HLV bạn đã thêm trên hệ thống</span>
+
+            <div class="card hlv_card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Tên: <span></span></h5>
+                  <p class="card-text">Kinh nghiệm: <span></span></p>
+                  <p class="card-text">Chứng chỉ: <span></span></p>
+                  <p class="card-text">Email: <span></span></p>
+                  <p class="card-text">SĐT: <span></span></p>
+                  <p class="card-text">Facebook: <span><a href=""></a></span></p>
+                  <button class="btn btn-primary">Chỉnh sửa</button>
+                  <button class="btn btn-primary">Xoá</button>
+                </div>
+              </div>
+
+              <span>Bài tập bạn đã thêm trên hệ thống</span>
+
+              <div class="card baitap_card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Tên: <span></span></h5>
+                  <p class="card-text">Mức độ: <span></span></p>
+                  <p class="card-text">Mục đích: <span></span></p>
+                  <p class="card-text">Link: <span><a href=""></a></span></p>
+                  <button class="btn btn-primary">Chỉnh sửa</button>
+                  <button class="btn btn-primary">Xoá</button>
+                </div>
+              </div>
+        </div>
+
+    </div>
+
+    <div id="hlv" class="height-100 bg-light">
+        <div class="container1">
+            <div class="title">Tạo hồ sơ HLV mới</div>
+            <form action="/checkSignUp" method="post">
+                <div class="user_details">
+                    <div class="inputbox">
+                        <span class="details">Họ và tên</span>
+                        <input type="text" name="fullname" placeholder="Nhập họ tên của HLV " id="fullname" required>
+                     </div>
+    
+                     <div class="inputbox">
+                        <span class="details">Kinh nghiệm huấn luyện </span>
+                        <input type="text" name="exp" placeholder="Kinh nghiệm huấn luyện" id="exp" required>
+                     </div>
+    
+                     <div class="inputbox">
+                        <span class="details">Chứng chỉ </span>
+                        <input type="text" name= "certi" placeholder="Các chứng chỉ liên quan đến huấn luyện" id="certi" required>
+                     </div>
+                     <div class="inputbox">
+                        <span class="details">Email </span>
+                        <input type="text" name="email" id="email" placeholder="Email của HLV " required>
+                     </div>
+    
+                     <div class="inputbox">
+                        <span class="details">Số điện thoại </span>
+                        <input type="text" name="phone" id="phone" placeholder="Số điện thoại HLV " required>
+                     </div>
+    
+                     <div class="inputbox">
+                        <span class="details">Link Facebook</span>
+                        <input type="text" name="username" id="username" placeholder="Link Facebook trang cá nhân của HLV " required>
+                     </div>
+    
+                </div>
+                <div class="button">
+                    <input type="submit" value="Thêm HLV">
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div id="baitap" class="height-100 bg-light">
+        <div class="container2">
+            <div class="title">Tạo bài tập mới</div>
+            <form action="/checkSignUp" method="post">
+                <div class="user_details">
+                    <div class="inputbox">
+                        <span class="details">Tên của bài tập</span>
+                        <input type="text" name="ex_name" placeholder="Nhập tên của bài tập " id="ex_name" required>
+                     </div>
+    
+                     <div class="inputbox">
+                        <span class="details">Mức độ(Dễ : 1; Trung bình : 2; Khó : 3)</span>
+                        <input type="text" name="level" placeholder="Điền số tương ứng" id="level" required>
+                     </div>
+    
+                     <div class="inputbox">
+                        <span class="details">Mục đích bài tập (Thân trên: 1; Thân dưới: 2; Bụng: 3)  </span>
+                        <input type="text" name= "reason" placeholder="Diền số tương ứng" id="reason" required>
+                     </div>
+                     <div class="inputbox">
+                        <span class="details">Link video hướng dẫn </span>
+                        <input type="text" name="video" id="video" placeholder="Link video hướng dẫn" required>
+                     </div>
+    
+                </div>
+                <div class="button">
+                    <input type="submit" value="Thêm Bài tập">
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>
